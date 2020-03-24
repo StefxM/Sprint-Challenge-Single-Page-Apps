@@ -1,24 +1,27 @@
 import React from "react";
 import styled from 'styled-components';
+import Header from './Header';
+import CharacterList from './CharacterList';
 
 export default function WelcomePage() {
+  <h1><u>Time to get schwifty!</u></h1>
+  <img src="./mortybackground.jpg"></img>
+
   const PrettyHeader = styled.header`
     background-color: black;
     color: purple;
   `;
 
-  return (
+  return (//<PrettyHeader> 
     <section className="welcome-page">
       <header>
-        <PrettyHeader>
-        <h1>Welcome !!</h1>
-        <center><img
-          className="main-img"
-          src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
-          alt="rick"
-        />
-        </center>
-        </PrettyHeader>
+        <PrettyHeader/>
+          <Header/>
+          <nav>
+      <Link to="/characterList" component={CharacterList} />
+      </nav>
+      <Route exact path="/characterList" component={CharacterList} />
+        <PrettyHeader/>
       </header>
     </section>
   );

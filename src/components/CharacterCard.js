@@ -1,17 +1,14 @@
 import React from "react";
 
-export default function CharacterCard() {
+const CharacterCard = props => {
+    return (
+      <li className="character-card" key={props.id}>
+        <img src={props.image}></img>
+        <h2>Name: {props.name}</h2>
+        <p>{props.status}</p>
+        <p>Species: {props.species}</p>
+      </li>
+    );
+  };
+  export default CharacterCard;
   
-  return <span>todo: character</span>;
-}
-
-function CharacterDetails({ character }) {
-  const { name, status, species } = character;
-  return (
-    <div className="character-card">
-      <h1>{name}</h1>
-      <p><u>Status:</u></p>
-    </div>
-    
-  )
-}

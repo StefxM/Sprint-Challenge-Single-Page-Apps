@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <header className="ui centered">
       <h1 className="ui center">Rick &amp; Morty Fan Page</h1>
-      <Link to="/" className="character-button">Characters</Link>
+      <Link to="./characterList.js" className="character-button">Characters</Link>
     </header>
   );
 }
