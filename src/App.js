@@ -1,15 +1,16 @@
 import React from "react";
+//import CharacterList from "./components/CharacterList";
+import Header from "./components/Header";
+//import WelcomePage from "./components/WelcomePage.js";
 
-import WelcomePage from "./components/WelcomePage.js";
-import CharacterList from "./components/CharacterList";
-import { Route, Link }from "react-router-dom";
 
 
 export default function App() {
  
   return (
     <main data-testid='app'>
-      <WelcomePage/>
+      <Header/>
+     
           </main>
         );
 };

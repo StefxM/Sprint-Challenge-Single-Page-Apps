@@ -1,6 +1,6 @@
 import React from "react";
 
-export default const SearchForm = props => {
+const SearchForm = props => {
  
   return (
     <section className="search-form">
@@ -8,3 +8,5 @@ export default const SearchForm = props => {
     </section>
   );
 }
+
+export default SearchForm;

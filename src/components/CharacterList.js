@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import CharacterCard from "./CharacterCard";
-import SearchForm from "./SearchForm";
+//import { Route, Link } from "react-router-dom";
+
 
 function CharacterList() {
   const [rmcharacters, setrmCharacters] = useState([]);
 
     useEffect(() => {
       axios.get("https://rickandmortyapi.com/api/character/").then(response => { 
-      //console.log(response.data.results);
+      console.log(response.data.results);
       setrmCharacters(response.data.results);
       });
     }, []);
     
-    const [search, setSearch] = React.useState("");
+    /*const [search, setSearch] = React.useState("");
 
     const handleChange = event => {
       setSearch(event.target.value);
@@ -23,11 +24,16 @@ function CharacterList() {
       return names.startsWith(search);
     })
     
+    <SearchForm value={search} onChange={handleChange} />
+      <CharacterCard rmcharacters={result} />*/
+    
 
     return (
       <div className="App">
+      
+
       {rmcharacters.map(props =>{
-        console.log(props);
+        
         return (
           <CharacterCard
               id={props.id}
@@ -38,8 +44,6 @@ function CharacterList() {
                 />
         )
       })}
-      <SearchForm value={search} onChange={handleChange} />
-      <CharacterCard rmcharacters={result} />
       </div>
 
     );
