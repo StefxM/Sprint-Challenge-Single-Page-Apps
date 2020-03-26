@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import CharacterCard from "./CharacterCard";
+import SearchForm from "./SearchForm";
+
 //import { Route, Link } from "react-router-dom";
+import styled from "styled-components"
 
 
 function CharacterList() {
+  //api
   const [rmcharacters, setrmCharacters] = useState([]);
 
     useEffect(() => {
@@ -13,41 +17,56 @@ function CharacterList() {
       setrmCharacters(response.data.results);
       });
     }, []);
-    
-    /*const [search, setSearch] = React.useState("");
+
+   //search bar 
+    const [search, setSearch] = React.useState("");
 
     const handleChange = event => {
       setSearch(event.target.value);
     };
 
     const result = rmcharacters.filter(names => {
-      return names.startsWith(search);
-    })
+       const results = names.name.includes(search);
+       return results; 
+     //console.log(names);
+    })//end of search bar
     
-    <SearchForm value={search} onChange={handleChange} />
-      <CharacterCard rmcharacters={result} />*/
-    
+//styled 
+const PrettyDiv = styled.Div`
+background-color: black;
+color: green;
+`;
+   
+
+
+
 
     return (
       <div className="App">
-      
-
-      {rmcharacters.map(props =>{
-        
+       
+      <SearchForm value={search} onChange={handleChange} />
+      <CharacterCard rmcharacters={result} />
+      <PrettyDiv>
+      {result.map(props =>{
         return (
           <CharacterCard
-              id={props.id}
+              key={props.id}
               image={props.image}
               name={props.name}
               status={props.status}
-              species={props.species}
-                />
+              species={props.species}       
+              />      
         )
       })}
+      </PrettyDiv>
       </div>
 
     );
+
+
+    
     }          
 
+    
     export default CharacterList;
 

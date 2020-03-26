@@ -1,4 +1,4 @@
-import React from "react";
+/*import React from "react";
 import styled from 'styled-components';
 //import Header from './Header';
 import CharacterList from './CharacterList';
@@ -14,14 +14,15 @@ function WelcomePage() {
   return (//<PrettyHeader> 
     <section className="welcome-page">
       <header>
+      <PrettyHeader/>
       <h1><u>Time to get schwifty!</u></h1>
-      <Link to="./characterList.js" className="character-button">Characters</Link>
+      <Link to="/characterList.js" className="character-button">Characters</Link>
       <Route exact path="/characterList" component={CharacterList} />
      
-        <PrettyHeader/>
+        
       </header>
     </section>
   );
 }
 
-export default WelcomePage;
+export default WelcomePage;*/
