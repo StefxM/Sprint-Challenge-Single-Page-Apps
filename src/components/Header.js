@@ -1,22 +1,21 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import styled from "styled-components";
+//import styled from "styled-components";
 
 export default function Header() {
 
 //styled
-  const PrettyHeader = styled.header`
-  background-color: black;
-  color: teal;
-  margin: 2%;
-  `;
+ // const PrettyHeader = styled.header`
+ // color: teal;
+  
+ // `;
 
 
 
   return (
     
     <header>
-    <PrettyHeader>
+   
       
       <Link to="/CharacterList" className="character-button"><center><h1 className="ui center"><u>Time to get schwifty!</u></h1></center></Link>
       <div>
@@ -26,7 +25,7 @@ export default function Header() {
           alt="rmfamily"
           /></center>   
       </div>
-      </PrettyHeader>
+     
     </header>
    
   );
